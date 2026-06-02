@@ -1,0 +1,35 @@
+<div class="sidebar">
+
+  <div
+    class="menu"
+    (click)="toggleDashboard()">
+
+    DevOps Dashboard ▼
+
+  </div>
+
+  @if(showDashboard){
+
+    <div
+      class="submenu"
+      (click)="toggleProjects()">
+
+      Projects ▼
+
+    </div>
+
+  }
+
+  @if(showProjects){
+
+    <div class="child">
+      Repos
+    </div>
+
+    <div class="child">
+      Pipelines
+    </div>
+
+  }
+
+</div>
