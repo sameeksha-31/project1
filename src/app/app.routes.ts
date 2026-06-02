@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Login } from './pages/login/login';
+import { Pipelines } from './pipelines/pipelines';
 
 import { authGuard } from './guards/auth-guard';
 
@@ -28,6 +29,12 @@ export const routes: Routes = [
   {
     path: 'about',
     component: About,
+    canActivate: [authGuard]
+  },
+
+  {
+    path: 'pipelines',
+    component: Pipelines,
     canActivate: [authGuard]
   }
 
