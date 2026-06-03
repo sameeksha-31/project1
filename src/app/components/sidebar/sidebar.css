@@ -1,23 +1,32 @@
 .sidebar{
   width:250px;
-  background:#f3f4f6;
-  min-height:100vh;
-  padding:20px;
+  padding:10px;
 }
 
-.menu{
-  background:#dbeafe;
+.menu-item{
   padding:12px;
   cursor:pointer;
+  background:#dfe8f5;
+  margin-bottom:5px;
+  border-radius:4px;
+}
+
+.menu-item:hover{
+  background:#cbd8ea;
 }
 
 .submenu{
-  margin-left:15px;
-  padding:10px;
-  cursor:pointer;
+  margin-left:20px;
 }
 
-.child{
-  margin-left:35px;
+.link-item{
   padding:10px;
+  cursor:pointer;
+  background:white;
+  margin-bottom:5px;
+  border-left:3px solid #1e2a3a;
+}
+
+.link-item:hover{
+  background:#f0f0f0;
 }

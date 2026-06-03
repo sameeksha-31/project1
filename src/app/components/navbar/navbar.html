@@ -1,7 +1,57 @@
 <nav class="navbar">
 
-  <div class="logo">
-    DevOps Dashboard
+  <div class="dashboard-menu">
+
+    <span (click)="toggleDashboard()">
+      Dashboard ▼
+    </span>
+
+    @if(showDashboard){
+
+      <div class="dropdown">
+
+        <div class="dropdown-item"
+             (click)="toggleDevOps()">
+          DevOps ▼
+        </div>
+
+        @if(showDevOps){
+
+          <div class="sub-dropdown">
+
+            <div class="dropdown-item"
+                 (click)="toggleProjects()">
+              Projects ▼
+            </div>
+
+            @if(showProjects){
+
+              <div class="sub-dropdown">
+
+                <div class="dropdown-item">
+                  Repos
+                </div>
+
+                <div class="dropdown-item">
+                  Pipelines
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        }
+
+        <div class="dropdown-item">
+          Azure
+        </div>
+
+      </div>
+
+    }
+
   </div>
 
   <div class="links">

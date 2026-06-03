@@ -12,6 +12,12 @@ export class Navbar {
 
   showLogout = false;
 
+  showDashboard = false;
+
+  showDevOps = false;
+
+  showProjects = false;
+
   constructor(
     public authService: AuthService,
     private router: Router
@@ -19,6 +25,18 @@ export class Navbar {
 
   toggleLogout() {
     this.showLogout = !this.showLogout;
+  }
+
+  toggleDashboard() {
+    this.showDashboard = !this.showDashboard;
+  }
+
+  toggleDevOps() {
+    this.showDevOps = !this.showDevOps;
+  }
+
+  toggleProjects() {
+    this.showProjects = !this.showProjects;
   }
 
   logout() {

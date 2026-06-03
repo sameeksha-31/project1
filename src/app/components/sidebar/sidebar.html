@@ -1,34 +1,49 @@
 <div class="sidebar">
 
-  <div
-    class="menu"
-    (click)="toggleDashboard()">
-
-    DevOps Dashboard ▼
-
+  <div class="menu-item" (click)="toggleDashboard()">
+    Dashboard ▼
   </div>
 
   @if(showDashboard){
 
-    <div
-      class="submenu"
-      (click)="toggleProjects()">
+    <div class="submenu">
 
-      Projects ▼
+      <div class="menu-item" (click)="toggleDevOps()">
+        DevOps ▼
+      </div>
 
-    </div>
+      @if(showDevOps){
 
-  }
+        <div class="submenu">
 
-  @if(showProjects){
+          <div class="menu-item" (click)="toggleProjects()">
+            Projects ▼
+          </div>
 
-    <div class="child">
-      Repos
-    </div>
+          @if(showProjects){
 
-  
-    <div class="child">
-      <a routerLink="/pipelines">Pipelines</a>
+            <div class="submenu">
+
+              <div class="link-item">
+                Repos
+              </div>
+
+              <div class="link-item">
+                Pipelines
+              </div>
+
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+      <div class="menu-item">
+        Azure
+      </div>
+
     </div>
 
   }
