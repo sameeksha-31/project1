@@ -10,42 +10,20 @@
 
       <div class="dropdown">
 
-        <div class="dropdown-item"
-             (click)="toggleDevOps()">
-          DevOps ▼
+        <div
+          class="dropdown-item"
+          (click)="selectDevOps()">
+
+          DevOps
+
         </div>
 
-        @if(showDevOps){
+        <div
+          class="dropdown-item"
+          (click)="selectAzure()">
 
-          <div class="sub-dropdown">
-
-            <div class="dropdown-item"
-                 (click)="toggleProjects()">
-              Projects ▼
-            </div>
-
-            @if(showProjects){
-
-              <div class="sub-dropdown">
-
-                <div class="dropdown-item">
-                  Repos
-                </div>
-
-                <div class="dropdown-item">
-                  Pipelines
-                </div>
-
-              </div>
-
-            }
-
-          </div>
-
-        }
-
-        <div class="dropdown-item">
           Azure
+
         </div>
 
       </div>
@@ -56,14 +34,26 @@
 
   <div class="links">
 
-    <a routerLink="/home">Home</a>
+    <a
+      routerLink="/home"
+      (click)="dashboardService.selectedPage='home'">
 
-    <a routerLink="/about">About</a>
+      Home
+
+    </a>
+
+    <a routerLink="/about">
+
+      About
+
+    </a>
 
     <div class="account">
 
       <span (click)="toggleLogout()">
+
         Account ▼
+
       </span>
 
       @if(showLogout){
@@ -71,7 +61,9 @@
         <div class="logout-menu">
 
           <button (click)="logout()">
+
             Logout
+
           </button>
 
         </div>

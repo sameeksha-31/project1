@@ -1,12 +1,144 @@
 <div class="home-container">
 
-  <div class="content">
+  <app-sidebar></app-sidebar>
 
-    <h1>Welcome to Dashboard</h1>
+  <div class="dashboard-content">
 
-    <p>
-      Select Repos or Pipelines from the Dashboard dropdown in the navbar.
-    </p>
+    @if(dashboardService.selectedPage === 'home'){
+
+      <h1>Admin Dashboard</h1>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <h3>Total Projects</h3>
+
+          <p>6 / 5</p>
+
+          <span style="color:red">
+
+            ⚠ Limit Exceeded
+
+          </span>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Repositories</h3>
+
+          <p>18</p>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Pipelines</h3>
+
+          <p>9</p>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Storage Cost</h3>
+
+          <p>$245</p>
+
+        </div>
+
+      </div>
+
+      <div class="section">
+
+        <h2>Alerts</h2>
+
+        <div class="alert-item">
+
+          ⚠ 1 Extra Project Found
+
+        </div>
+
+        <div class="alert-item">
+
+          ⚠ 2 Failed Pipelines
+
+        </div>
+
+        <div class="alert-item">
+
+          ⚠ Storage Cost Increased
+
+        </div>
+
+      </div>
+
+      <div class="section">
+
+        <h2>Project Usage</h2>
+
+        <div class="progress-bar">
+
+          <div class="progress-fill">
+
+            120%
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+    @if(dashboardService.selectedPage === 'project1'){
+
+      <h1>Project1</h1>
+
+      <p>
+
+        This is Project1 Page.
+
+      </p>
+
+    }
+
+    @if(dashboardService.selectedPage === 'repos'){
+
+      <h1>Repositories</h1>
+
+      <p>
+
+        This is Repositories Page.
+
+      </p>
+
+    }
+
+    @if(dashboardService.selectedPage === 'pipelines'){
+
+      <h1>Pipelines</h1>
+
+      <p>
+
+        This is Pipelines Page.
+
+      </p>
+
+    }
+
+    @if(dashboardService.selectedPage === 'azure'){
+
+      <h1>Azure</h1>
+
+      <p>
+
+        This is Azure.
+
+      </p>
+
+    }
 
   </div>
 

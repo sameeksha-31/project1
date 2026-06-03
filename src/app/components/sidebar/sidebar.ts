@@ -1,29 +1,25 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })
 export class Sidebar {
 
-  showDashboard = false;
-
-  showDevOps = false;
-
   showProjects = false;
 
-  toggleDashboard() {
-    this.showDashboard = !this.showDashboard;
-  }
-
-  toggleDevOps() {
-    this.showDevOps = !this.showDevOps;
-  }
+  constructor(
+    public dashboardService: DashboardService
+  ) {}
 
   toggleProjects() {
+
     this.showProjects = !this.showProjects;
+
   }
 
 }

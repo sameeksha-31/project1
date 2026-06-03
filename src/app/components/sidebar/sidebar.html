@@ -1,48 +1,56 @@
 <div class="sidebar">
 
-  <div class="menu-item" (click)="toggleDashboard()">
-    Dashboard ▼
-  </div>
+  @if(dashboardService.selectedModule === 'DevOps'){
 
-  @if(showDashboard){
+    <div
+      class="menu-item"
+      (click)="toggleProjects()">
 
-    <div class="submenu">
+      Projects ▼
 
-      <div class="menu-item" (click)="toggleDevOps()">
-        DevOps ▼
-      </div>
+    </div>
 
-      @if(showDevOps){
+    @if(showProjects){
 
-        <div class="submenu">
+      <div class="submenu">
 
-          <div class="menu-item" (click)="toggleProjects()">
-            Projects ▼
-          </div>
+        <div
+          class="submenu-item"
+          (click)="dashboardService.selectedPage='project1'">
 
-          @if(showProjects){
-
-            <div class="submenu">
-
-              <div class="link-item">
-                Repos
-              </div>
-
-              <div class="link-item">
-                Pipelines
-              </div>
-
-            </div>
-
-          }
+          Project1
 
         </div>
 
-      }
+        <div
+          class="submenu-item"
+          (click)="dashboardService.selectedPage='repos'">
 
-      <div class="menu-item">
-        Azure
+          Repositories
+
+        </div>
+
+        <div
+          class="submenu-item"
+          (click)="dashboardService.selectedPage='pipelines'">
+
+          Pipelines
+
+        </div>
+
       </div>
+
+    }
+
+  }
+
+  @if(dashboardService.selectedModule === 'Azure'){
+
+    <div
+      class="menu-item"
+      (click)="dashboardService.selectedPage='azure'">
+
+      Azure
 
     </div>
 

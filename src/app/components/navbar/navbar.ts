@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,29 +15,46 @@ export class Navbar {
 
   showDashboard = false;
 
-  showDevOps = false;
-
-  showProjects = false;
-
   constructor(
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    public dashboardService: DashboardService
   ) {}
 
   toggleLogout() {
+
     this.showLogout = !this.showLogout;
+
   }
 
   toggleDashboard() {
+
     this.showDashboard = !this.showDashboard;
+
   }
 
-  toggleDevOps() {
-    this.showDevOps = !this.showDevOps;
+  selectDevOps() {
+
+    this.dashboardService.selectedModule = 'DevOps';
+
+    this.dashboardService.selectedPage = 'home';
+
+    this.showDashboard = false;
+
+    this.router.navigate(['/home']);
+
   }
 
-  toggleProjects() {
-    this.showProjects = !this.showProjects;
+  selectAzure() {
+
+    this.dashboardService.selectedModule = 'Azure';
+
+    this.dashboardService.selectedPage = 'azure';
+
+    this.showDashboard = false;
+
+    this.router.navigate(['/home']);
+
   }
 
   logout() {
