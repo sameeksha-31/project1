@@ -13,7 +13,7 @@ export class Navbar {
 
   showLogout = false;
 
-  showDashboard = false;
+  showCloudOps = false;
 
   constructor(
     public authService: AuthService,
@@ -27,9 +27,9 @@ export class Navbar {
 
   }
 
-  toggleDashboard() {
+  toggleCloudOps() {
 
-    this.showDashboard = !this.showDashboard;
+    this.showCloudOps = !this.showCloudOps;
 
   }
 
@@ -39,7 +39,9 @@ export class Navbar {
 
     this.dashboardService.selectedPage = 'home';
 
-    this.showDashboard = false;
+    this.dashboardService.sidebarVisible = true;
+
+    this.showCloudOps = false;
 
     this.router.navigate(['/home']);
 
@@ -51,7 +53,9 @@ export class Navbar {
 
     this.dashboardService.selectedPage = 'azure';
 
-    this.showDashboard = false;
+    this.dashboardService.sidebarVisible = true;
+
+    this.showCloudOps = false;
 
     this.router.navigate(['/home']);
 

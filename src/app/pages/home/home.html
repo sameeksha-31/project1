@@ -6,84 +6,99 @@
 
     @if(dashboardService.selectedPage === 'home'){
 
-      <h1>Admin Dashboard</h1>
+      <h1>CloudOps Overview</h1>
 
       <div class="cards">
 
         <div class="card">
-
-          <h3>Total Projects</h3>
-
-          <p>6 / 5</p>
-
-          <span style="color:red">
-
-            ⚠ Limit Exceeded
-
-          </span>
-
+          <h3>📁 Total Projects</h3>
+          <h2>6</h2>
         </div>
 
         <div class="card">
-
-          <h3>Repositories</h3>
-
-          <p>18</p>
-
+          <h3>📦 Repositories</h3>
+          <h2>18</h2>
         </div>
 
         <div class="card">
-
-          <h3>Pipelines</h3>
-
-          <p>9</p>
-
+          <h3>⚙ Pipelines</h3>
+          <h2>9</h2>
         </div>
 
         <div class="card">
-
-          <h3>Storage Cost</h3>
-
-          <p>$245</p>
-
+          <h3>☁ Azure Resources</h3>
+          <h2>25</h2>
         </div>
 
       </div>
 
       <div class="section">
 
-        <h2>Alerts</h2>
+        <h2>Monthly DevOps Activity</h2>
 
-        <div class="alert-item">
-
-          ⚠ 1 Extra Project Found
-
+        <div class="bar-item">
+          <span>Projects</span>
+          <div class="bar projects-bar">80%</div>
         </div>
 
-        <div class="alert-item">
-
-          ⚠ 2 Failed Pipelines
-
+        <div class="bar-item">
+          <span>Repositories</span>
+          <div class="bar repos-bar">65%</div>
         </div>
 
-        <div class="alert-item">
+        <div class="bar-item">
+          <span>Pipelines</span>
+          <div class="bar pipeline-bar">90%</div>
+        </div>
 
-          ⚠ Storage Cost Increased
-
+        <div class="bar-item">
+          <span>Test Plans</span>
+          <div class="bar test-bar">70%</div>
         </div>
 
       </div>
 
       <div class="section">
 
-        <h2>Project Usage</h2>
+        <h2>Recent Activity</h2>
 
-        <div class="progress-bar">
+        <div class="alert-item">
+          ✅ Frontend Pipeline Successfully Deployed
+        </div>
 
-          <div class="progress-fill">
+        <div class="alert-item">
+          ✅ Repository Created
+        </div>
 
-            120%
+        <div class="alert-item">
+          ✅ Test Plan Updated
+        </div>
 
+        <div class="alert-item">
+          ✅ Board Task Closed
+        </div>
+
+      </div>
+
+      <div class="section">
+
+        <h2>Pipeline Status Summary</h2>
+
+        <div class="cards">
+
+          <div class="card">
+            <h3>✅ Successful</h3>
+            <h2>12</h2>
+          </div>
+
+          <div class="card">
+            <h3>🔄 Running</h3>
+            <h2>3</h2>
+          </div>
+
+          <div class="card">
+            <h3>❌ Failed</h3>
+            <h2>2</h2>
           </div>
 
         </div>
@@ -92,15 +107,67 @@
 
     }
 
-    @if(dashboardService.selectedPage === 'project1'){
+    @if(dashboardService.selectedPage === 'projects'){
 
-      <h1>Project1</h1>
+      <h1>Projects</h1>
 
-      <p>
+      <div class="cards">
 
-        This is Project1 Page.
+        <div class="card">
+          <h3>CI/CD Automation Platform</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 3</p>
+          <p><strong>Pipelines:</strong> 2</p>
+          <p><strong>Status:</strong> Healthy</p>
+          <button>View Project</button>
+        </div>
 
-      </p>
+        <div class="card">
+          <h3>Infrastructure Monitoring</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 2</p>
+          <p><strong>Pipelines:</strong> 3</p>
+          <p><strong>Status:</strong> Healthy</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Cost Optimizer</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 4</p>
+          <p><strong>Pipelines:</strong> 2</p>
+          <p><strong>Status:</strong> Warning</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="card">
+          <h3>Release Management Portal</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 5</p>
+          <p><strong>Pipelines:</strong> 4</p>
+          <p><strong>Status:</strong> Healthy</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="card">
+          <h3>Log Analytics Dashboard</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 2</p>
+          <p><strong>Pipelines:</strong> 1</p>
+          <p><strong>Status:</strong> Healthy</p>
+          <button>View Project</button>
+        </div>
+
+        <div class="card">
+          <h3>Container Deployment Manager</h3>
+          <hr>
+          <p><strong>Repositories:</strong> 6</p>
+          <p><strong>Pipelines:</strong> 5</p>
+          <p><strong>Status:</strong> Critical</p>
+          <button>View Project</button>
+        </div>
+
+      </div>
 
     }
 
@@ -108,11 +175,29 @@
 
       <h1>Repositories</h1>
 
-      <p>
+      <table>
 
-        This is Repositories Page.
+        <tr>
+          <th>Repository Name</th>
+          <th>Status</th>
+        </tr>
 
-      </p>
+        <tr>
+          <td>frontend-ui</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>backend-api</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>devops-scripts</td>
+          <td>Active</td>
+        </tr>
+
+      </table>
 
     }
 
@@ -120,23 +205,150 @@
 
       <h1>Pipelines</h1>
 
-      <p>
+      <table>
 
-        This is Pipelines Page.
+        <tr>
+          <th>Pipeline</th>
+          <th>Status</th>
+        </tr>
 
-      </p>
+        <tr>
+          <td>Frontend Build</td>
+          <td>Success</td>
+        </tr>
+
+        <tr>
+          <td>Backend Deploy</td>
+          <td>Running</td>
+        </tr>
+
+        <tr>
+          <td>Production Release</td>
+          <td>Failed</td>
+        </tr>
+
+      </table>
+
+    }
+
+    @if(dashboardService.selectedPage === 'boards'){
+
+      <h1>Boards</h1>
+
+      <table>
+
+        <tr>
+          <th>Work Item</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>User Authentication Module</td>
+          <td>Completed</td>
+        </tr>
+
+        <tr>
+          <td>UI Enhancement</td>
+          <td>In Progress</td>
+        </tr>
+
+        <tr>
+          <td>API Integration</td>
+          <td>Pending</td>
+        </tr>
+
+      </table>
+
+    }
+
+    @if(dashboardService.selectedPage === 'testplans'){
+
+      <h1>Test Plans</h1>
+
+      <table>
+
+        <tr>
+          <th>Test Plan</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>Login Testing</td>
+          <td>Passed</td>
+        </tr>
+
+        <tr>
+          <td>API Testing</td>
+          <td>Passed</td>
+        </tr>
+
+        <tr>
+          <td>Performance Testing</td>
+          <td>Running</td>
+        </tr>
+
+      </table>
 
     }
 
     @if(dashboardService.selectedPage === 'azure'){
 
-      <h1>Azure</h1>
+      <h1>Azure Resources</h1>
 
-      <p>
+      <div class="cards">
 
-        This is Azure.
+        <div class="card">
+          <h3>Monthly Storage Cost</h3>
+          <h2>$245</h2>
+        </div>
 
-      </p>
+        <div class="card">
+          <h3>Virtual Machines</h3>
+          <h2>12</h2>
+        </div>
+
+        <div class="card">
+          <h3>Resource Groups</h3>
+          <h2>8</h2>
+        </div>
+
+        <div class="card">
+          <h3>Storage Accounts</h3>
+          <h2>5</h2>
+        </div>
+
+      </div>
+
+      <div class="section">
+
+        <h2>Monthly Cost Trend</h2>
+
+        <div class="bar-item">
+          <span>January</span>
+          <div class="bar jan-bar">$120</div>
+        </div>
+
+        <div class="bar-item">
+          <span>February</span>
+          <div class="bar feb-bar">$150</div>
+        </div>
+
+        <div class="bar-item">
+          <span>March</span>
+          <div class="bar mar-bar">$180</div>
+        </div>
+
+        <div class="bar-item">
+          <span>April</span>
+          <div class="bar apr-bar">$220</div>
+        </div>
+
+        <div class="bar-item">
+          <span>May</span>
+          <div class="bar may-bar">$245</div>
+        </div>
+
+      </div>
 
     }
 

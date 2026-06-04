@@ -1,46 +1,48 @@
+@if(dashboardService.sidebarVisible){
+
 <div class="sidebar">
 
   @if(dashboardService.selectedModule === 'DevOps'){
 
     <div
       class="menu-item"
-      (click)="toggleProjects()">
+      (click)="dashboardService.selectedPage='projects'">
 
-      Projects ▼
+      📁 Projects
 
     </div>
 
-    @if(showProjects){
+    <div
+      class="menu-item"
+      (click)="dashboardService.selectedPage='repos'">
 
-      <div class="submenu">
+      📦 Repositories
 
-        <div
-          class="submenu-item"
-          (click)="dashboardService.selectedPage='project1'">
+    </div>
 
-          Project1
+    <div
+      class="menu-item"
+      (click)="dashboardService.selectedPage='pipelines'">
 
-        </div>
+      ⚙ Pipelines
 
-        <div
-          class="submenu-item"
-          (click)="dashboardService.selectedPage='repos'">
+    </div>
 
-          Repositories
+    <div
+      class="menu-item"
+      (click)="dashboardService.selectedPage='boards'">
 
-        </div>
+      📋 Boards
 
-        <div
-          class="submenu-item"
-          (click)="dashboardService.selectedPage='pipelines'">
+    </div>
 
-          Pipelines
+    <div
+      class="menu-item"
+      (click)="dashboardService.selectedPage='testplans'">
 
-        </div>
+      🧪 Test Plans
 
-      </div>
-
-    }
+    </div>
 
   }
 
@@ -50,10 +52,12 @@
       class="menu-item"
       (click)="dashboardService.selectedPage='azure'">
 
-      Azure
+      ☁ Azure Resources
 
     </div>
 
   }
 
 </div>
+
+}

@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class DashboardService {
 
-  selectedModule = 'DevOps';
+  selectedModule = '';
 
   selectedPage = 'home';
+
+  sidebarVisible = false;
 
 }

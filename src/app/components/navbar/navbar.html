@@ -2,11 +2,13 @@
 
   <div class="dashboard-menu">
 
-    <span (click)="toggleDashboard()">
-      Dashboard ▼
+    <span (click)="toggleCloudOps()">
+
+      ☰ CloudOps Hub
+
     </span>
 
-    @if(showDashboard){
+    @if(showCloudOps){
 
       <div class="dropdown">
 
@@ -14,7 +16,7 @@
           class="dropdown-item"
           (click)="selectDevOps()">
 
-          DevOps
+          📁 DevOps
 
         </div>
 
@@ -22,7 +24,7 @@
           class="dropdown-item"
           (click)="selectAzure()">
 
-          Azure
+          ☁ Azure
 
         </div>
 
@@ -36,7 +38,8 @@
 
     <a
       routerLink="/home"
-      (click)="dashboardService.selectedPage='home'">
+      (click)="dashboardService.selectedPage='home';
+               dashboardService.sidebarVisible=false">
 
       Home
 
