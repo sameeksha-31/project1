@@ -11,13 +11,13 @@
       <div class="cards">
 
         <div class="card">
-          <h3>Total Deployments</h3>
+          <h3>Total Repositories</h3>
           <h2>248</h2>
         </div>
 
         <div class="card">
-          <h3>Success Rate</h3>
-          <h2>96%</h2>
+          <h3>Total Projects</h3>
+          <h2>6</h2>
         </div>
 
         <div class="card">
@@ -26,8 +26,8 @@
         </div>
 
         <div class="card">
-          <h3>Azure Resources</h3>
-          <h2>42</h2>
+          <h3>Total Cost</h3>
+          <h2>$42</h2>
         </div>
 
       </div>
@@ -36,7 +36,7 @@
 
         <div class="section">
 
-          <h2>Deployment Trend</h2>
+          <h2>Projects vs Repositories</h2>
 
           <div class="mini-chart">
 
@@ -47,126 +47,69 @@
             <div class="chart-bar h95"></div>
             <div class="chart-bar h75"></div>
 
+          </div>
+
+        </div>
+
       </div>
 
-    </div>
+      <div class="section">
 
-  <div class="section">
+        <h2>DevOps Services Summary Table</h2>
 
-    <h2>Resource Utilization</h2>
+        <table>
 
-    <div class="progress-item">
-      <span>CPU Usage</span>
-      <div class="progress-bg">
-        <div class="progress-fill cpu-fill">72%</div>
-      </div>
-    </div>
+          <tr>
+            <th>Service</th>
+            <th>Status</th>
+          </tr>
 
-    <div class="progress-item">
-      <span>Memory Usage</span>
-      <div class="progress-bg">
-        <div class="progress-fill memory-fill">68%</div>
-      </div>
-    </div>
+          <tr>
+            <td>Azure DevOps</td>
+            <td>Healthy</td>
+          </tr>
 
-    <div class="progress-item">
-      <span>Storage Usage</span>
-      <div class="progress-bg">
-        <div class="progress-fill storage-fill">81%</div>
-      </div>
-    </div>
+          <tr>
+            <td>CI/CD Pipelines</td>
+            <td>Healthy</td>
+          </tr>
 
-  </div>
+          <tr>
+            <td>Monitoring</td>
+            <td>Warning</td>
+          </tr>
 
-</div>
+          <tr>
+            <td>Storage Services</td>
+            <td>Healthy</td>
+          </tr>
 
-<div class="section">
+        </table>
 
-  <h2>DevOps Services Summary Table</h2>
-
-  <table>
-
-    <tr>
-      <th>Service</th>
-      <th>Status</th>
-      <th>Availability</th>
-      <th>Incidents</th>
-    </tr>
-
-    <tr>
-      <td>Azure DevOps</td>
-      <td>Healthy</td>
-      <td>99.9%</td>
-      <td>0</td>
-    </tr>
-
-    <tr>
-      <td>CI/CD Pipelines</td>
-      <td>Healthy</td>
-      <td>98.5%</td>
-      <td>1</td>
-    </tr>
-
-    <tr>
-      <td>Monitoring</td>
-      <td>Warning</td>
-      <td>96.8%</td>
-      <td>2</td>
-    </tr>
-
-    <tr>
-      <td>Storage Services</td>
-      <td>Healthy</td>
-      <td>99.2%</td>
-      <td>0</td>
-    </tr>
-
-  </table>
-
-</div>
-
-<div class="analytics-grid">
-
-  <div class="section">
-
-    <h2>Environment Distribution</h2>
-
-    <div class="pie-container">
-
-      <div class="pie-circle">
-        65%
       </div>
 
-      <div class="pie-details">
-        <p>Production - 65%</p>
-        <p>Testing - 20%</p>
-        <p>Development - 15%</p>
+      <div class="analytics-grid">
+
+        <div class="section">
+
+          <h2>Monthly Cloud Cost</h2>
+
+          <div class="mini-chart">
+
+            <div class="chart-bar h30"></div>
+            <div class="chart-bar h45"></div>
+            <div class="chart-bar h60"></div>
+            <div class="chart-bar h70"></div>
+            <div class="chart-bar h85"></div>
+            <div class="chart-bar h95"></div>
+
+          </div>
+
+        </div>
+
       </div>
 
-    </div>
-
-  </div>
-
-  <div class="section">
-
-    <h2>Monthly Cloud Cost</h2>
-
-    <div class="mini-chart">
-
-      <div class="chart-bar h30"></div>
-      <div class="chart-bar h45"></div>
-      <div class="chart-bar h60"></div>
-      <div class="chart-bar h70"></div>
-      <div class="chart-bar h85"></div>
-      <div class="chart-bar h95"></div>
-
-    </div>
-
-  </div>
-
-</div>
-
-}
+    }
 
     @if(dashboardService.selectedPage === 'projects'){
 
