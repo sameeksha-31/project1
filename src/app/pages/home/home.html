@@ -6,174 +6,280 @@
 
     @if(dashboardService.selectedPage === 'home'){
 
-      <h1>CloudOps Analytics Dashboard</h1>
+<h1>CloudOps Analytics Dashboard</h1>
 
-      <div class="cards">
+<div class="cards">
 
-        <div class="card">
-          <h3>Total Repositories</h3>
-          <h2>248</h2>
-        </div>
+  <div class="card">
+    <h3>Total Repositories</h3>
+    <h2>248</h2>
+  </div>
 
-        <div class="card">
-          <h3>Total Projects</h3>
-          <h2>6</h2>
-        </div>
+  <div class="card">
+    <h3>Total Projects</h3>
+    <h2>6</h2>
+  </div>
 
-        <div class="card">
-          <h3>Active Pipelines</h3>
-          <h2>18</h2>
-        </div>
+  <div class="card">
+    <h3>Active Pipelines</h3>
+    <h2>18</h2>
+  </div>
 
-        <div class="card">
-          <h3>Total Cost</h3>
-          <h2>$42</h2>
+  <div class="card">
+    <h3>Monthly Cost</h3>
+    <h2>$42,860</h2>
+  </div>
+
+</div>
+
+<div class="dashboard-row">
+
+  <!-- PIE CHART CARD -->
+  <div class="chart-card">
+
+    <div class="chart-header">
+      <h2>Project Repository Distribution</h2>
+
+      <!-- FIXED BUTTON (NO openModal ERROR) -->
+      <button
+        class="details-btn"
+        (click)="openProject(projects[0])">
+        View Details
+      </button>
+
+    </div>
+
+    <div class="pie-wrapper">
+
+      <div class="project-pie-chart"></div>
+
+      <div class="pie-legend">
+
+        <div><span class="dot p1"></span> CI/CD Automation Platform (3)</div>
+        <div><span class="dot p2"></span> Infrastructure Monitoring (2)</div>
+        <div><span class="dot p3"></span> Cloud Cost Optimizer (4)</div>
+        <div><span class="dot p4"></span> Release Management Portal (5)</div>
+        <div><span class="dot p5"></span> Log Analytics Dashboard (2)</div>
+        <div><span class="dot p6"></span> Container Deployment Manager (6)</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- COST TREND CARD -->
+  <div class="chart-card">
+
+    <div class="chart-header">
+      <h2>Cloud Cost Trend</h2>
+
+      <select class="month-dropdown">
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+      </select>
+
+    </div>
+
+    <div class="graph-container">
+
+      <div class="y-axis">
+        <span>50K</span>
+        <span>40K</span>
+        <span>30K</span>
+        <span>20K</span>
+        <span>10K</span>
+      </div>
+
+      <div class="graph-area">
+
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+
+        <svg width="100%" height="250">
+
+          <polyline
+            points="20,200 120,160 220,130 320,100 420,70 520,40"
+            fill="none"
+            stroke="#2563eb"
+            stroke-width="4">
+          </polyline>
+
+          <circle cx="20" cy="200" r="5" fill="#2563eb"/>
+          <circle cx="120" cy="160" r="5" fill="#2563eb"/>
+          <circle cx="220" cy="130" r="5" fill="#2563eb"/>
+          <circle cx="320" cy="100" r="5" fill="#2563eb"/>
+          <circle cx="420" cy="70" r="5" fill="#2563eb"/>
+          <circle cx="520" cy="40" r="5" fill="#2563eb"/>
+
+        </svg>
+
+        <div class="x-axis">
+          <span>Jan</span>
+          <span>Feb</span>
+          <span>Mar</span>
+          <span>Apr</span>
+          <span>May</span>
+          <span>Jun</span>
         </div>
 
       </div>
 
-      <div class="analytics-grid">
+    </div>
 
-        <div class="section">
+  </div>
 
-          <h2>Projects vs Repositories</h2>
+</div>
 
-          <div class="mini-chart">
+<div class="section">
 
-            <div class="chart-bar h40"></div>
-            <div class="chart-bar h60"></div>
-            <div class="chart-bar h80"></div>
-            <div class="chart-bar h55"></div>
-            <div class="chart-bar h95"></div>
-            <div class="chart-bar h75"></div>
+  <h2>DevOps Services Summary</h2>
 
-          </div>
+  <table>
 
-        </div>
+    <tr>
+      <th>Service</th>
+      <th>Status</th>
+    </tr>
 
-      </div>
+    <tr><td>Azure DevOps</td><td>Healthy</td></tr>
+    <tr><td>CI/CD Pipelines</td><td>Healthy</td></tr>
+    <tr><td>Azure Monitor</td><td>Warning</td></tr>
+    <tr><td>Azure Storage</td><td>Healthy</td></tr>
+    <tr><td>AKS Cluster</td><td>Healthy</td></tr>
 
-      <div class="section">
+  </table>
 
-        <h2>DevOps Services Summary Table</h2>
+</div>
 
-        <table>
-
-          <tr>
-            <th>Service</th>
-            <th>Status</th>
-          </tr>
-
-          <tr>
-            <td>Azure DevOps</td>
-            <td>Healthy</td>
-          </tr>
-
-          <tr>
-            <td>CI/CD Pipelines</td>
-            <td>Healthy</td>
-          </tr>
-
-          <tr>
-            <td>Monitoring</td>
-            <td>Warning</td>
-          </tr>
-
-          <tr>
-            <td>Storage Services</td>
-            <td>Healthy</td>
-          </tr>
-
-        </table>
-
-      </div>
-
-      <div class="analytics-grid">
-
-        <div class="section">
-
-          <h2>Monthly Cloud Cost</h2>
-
-          <div class="mini-chart">
-
-            <div class="chart-bar h30"></div>
-            <div class="chart-bar h45"></div>
-            <div class="chart-bar h60"></div>
-            <div class="chart-bar h70"></div>
-            <div class="chart-bar h85"></div>
-            <div class="chart-bar h95"></div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    }
-
+}
     @if(dashboardService.selectedPage === 'projects'){
 
-      <h1>Projects</h1>
+<h1>Projects</h1>
 
-      <div class="cards">
+<div class="cards">
 
-        <div class="card">
-          <h3>CI/CD Automation Platform</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 3</p>
-          <p><strong>Pipelines:</strong> 2</p>
-          <p><strong>Status:</strong> Healthy</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>CI/CD Automation Platform</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 3</p>
+    <p><strong>Pipelines:</strong> 2</p>
+    <p><strong>Status:</strong> Healthy</p>
+    <button (click)="openProject(projects[0])">View Project</button>
+  </div>
 
-        <div class="card">
-          <h3>Infrastructure Monitoring</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 2</p>
-          <p><strong>Pipelines:</strong> 3</p>
-          <p><strong>Status:</strong> Healthy</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>Infrastructure Monitoring</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 2</p>
+    <p><strong>Pipelines:</strong> 3</p>
+    <p><strong>Status:</strong> Healthy</p>
+    <button (click)="openProject(projects[1])">View Project</button>
+  </div>
 
-        <div class="card">
-          <h3>Cloud Cost Optimizer</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 4</p>
-          <p><strong>Pipelines:</strong> 2</p>
-          <p><strong>Status:</strong> Warning</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>Cloud Cost Optimizer</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 4</p>
+    <p><strong>Pipelines:</strong> 2</p>
+    <p><strong>Status:</strong> Warning</p>
+    <button (click)="openProject(projects[2])">View Project</button>
+  </div>
 
-        <div class="card">
-          <h3>Release Management Portal</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 5</p>
-          <p><strong>Pipelines:</strong> 4</p>
-          <p><strong>Status:</strong> Healthy</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>Release Management Portal</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 5</p>
+    <p><strong>Pipelines:</strong> 4</p>
+    <p><strong>Status:</strong> Healthy</p>
+    <button (click)="openProject(projects[3])">View Project</button>
+  </div>
 
-        <div class="card">
-          <h3>Log Analytics Dashboard</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 2</p>
-          <p><strong>Pipelines:</strong> 1</p>
-          <p><strong>Status:</strong> Healthy</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>Log Analytics Dashboard</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 2</p>
+    <p><strong>Pipelines:</strong> 1</p>
+    <p><strong>Status:</strong> Healthy</p>
+    <button (click)="openProject(projects[4])">View Project</button>
+  </div>
 
-        <div class="card">
-          <h3>Container Deployment Manager</h3>
-          <hr>
-          <p><strong>Repositories:</strong> 6</p>
-          <p><strong>Pipelines:</strong> 5</p>
-          <p><strong>Status:</strong> Critical</p>
-          <button>View Project</button>
-        </div>
+  <div class="card">
+    <h3>Container Deployment Manager</h3>
+    <hr>
+    <p><strong>Repositories:</strong> 6</p>
+    <p><strong>Pipelines:</strong> 5</p>
+    <p><strong>Status:</strong> Critical</p>
+    <button (click)="openProject(projects[5])">View Project</button>
+  </div>
 
-      </div>
+</div>
 
-    }
+}
+
+<!-- PROJECT MODAL -->
+@if(showProjectDetails){
+
+<div class="modal-overlay">
+
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h2>Project Details</h2>
+
+      <button class="close-btn" (click)="closeProjectModal()">✕</button>
+    </div>
+
+    <table>
+
+      <tr>
+        <th>Field</th>
+        <th>Value</th>
+      </tr>
+
+      <tr>
+        <td>ID</td>
+        <td>{{selectedProject?.id}}</td>
+      </tr>
+
+      <tr>
+        <td>Name</td>
+        <td>{{selectedProject?.name}}</td>
+      </tr>
+
+      <tr>
+        <td>Description</td>
+        <td>{{selectedProject?.description}}</td>
+      </tr>
+
+      <tr>
+        <td>State</td>
+        <td>{{selectedProject?.state}}</td>
+      </tr>
+
+      <tr>
+        <td>Visibility</td>
+        <td>{{selectedProject?.visibility}}</td>
+      </tr>
+
+      <tr>
+        <td>URL</td>
+        <td>{{selectedProject?.url}}</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
+
+}
 
     @if(dashboardService.selectedPage === 'repos'){
 
